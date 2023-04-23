@@ -1,5 +1,5 @@
-{% include 'core/base.html' %} {% block content %}
-
+{% include 'core/base.html' %} 
+{% block content %}
 <form action="" method="POST">
   {% csrf_token %}
 <div class="prime">
@@ -43,6 +43,8 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    {% endcomment %} {% endblock content %}
+    {% endcomment %} 
+
   </div>
 </div>
+{% endblock content %}
