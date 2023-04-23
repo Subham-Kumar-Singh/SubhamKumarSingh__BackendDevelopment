@@ -34,7 +34,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 3,
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://test26600.azurewebsites.net/']
+# CSRF_TRUSTED_ORIGINS = ['https://test26600.azurewebsites.net/']
 
 # Application definition
 
