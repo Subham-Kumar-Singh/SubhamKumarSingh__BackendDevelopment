@@ -3,14 +3,13 @@
 {% block content %}
 <div class="back">
 <div class  = "background">
-    <form method="POST">
-        {% csrf_token %}
+    <form method="POST" >
         <div class="inside">
             <div class="homeclass">Home</div>
         <div class="main">
             <div class="select-form">
             <label for="trade_id">Trade ID: </label>
-            <select  name="trade_id" id="trade_id" >
+            <select  name="trade_id" id="trade_id">
                 {% for trade in trades %}
                     <option value="{{ trade.trade_id }}" >{{ trade.trade_id }}</option>
                 {% endfor %}

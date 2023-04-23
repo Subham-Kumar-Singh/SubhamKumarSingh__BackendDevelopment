@@ -8,19 +8,20 @@ from django.views.decorators.csrf import csrf_protect
 from rest_framework import generics, status, filters
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.views.decorators.csrf import csrf_exempt
+
 
 from django_filters.rest_framework import DjangoFilterBackend, RangeFilter
 from django_filters import rest_framework
 # Create your views here.
 
-
+@csrf_exempt
 def Home(request):
     if request.method == 'POST':
         trade_id = request.POST['trade_id']
         try:
             trade = Trade.objects.get(trade_id=trade_id)
             serializer = TradeSerializer(trade)
-            
             return render(request, 'core/trade_detail.html', {'data': dict(serializer.data)})
         except Trade.DoesNotExist:
             return HttpResponse('Invalid Trade ID')
@@ -28,7 +29,7 @@ def Home(request):
         trades = Trade.objects.all()
         return render(request, 'core/home.html', {'trades': trades})
 
-
+@csrf_exempt
 class TradeDetailView(APIView):
     def get(self, request, trade_id):
         try:
