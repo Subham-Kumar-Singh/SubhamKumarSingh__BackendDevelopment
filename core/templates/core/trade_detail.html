@@ -1,4 +1,7 @@
 {% include 'core/base.html' %} {% block content %}
+
+<form action="" method="POST">
+  {% csrf_token %}
 <div class="prime">
   <div class="mainback">
     <h1>Trade Detail</h1>
@@ -20,6 +23,7 @@
           <p><span>Trader: </span>{{ data.trader }}</p>
         </div>
       </div>
+    </form>
       <center>
         <a href="{% url 'Home' %}" class="homepageit">Home Page</a>
       </center>

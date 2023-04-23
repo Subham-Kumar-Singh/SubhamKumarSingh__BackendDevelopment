@@ -3,9 +3,7 @@
 {% block content %}
 <div class="back">
 <div class  = "background">
-    {% comment %} {{trade_detail}} {% endcomment %}
-    
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
         <div class="inside">
             <div class="homeclass">Home</div>
@@ -19,6 +17,7 @@
             </select>
         </div>
         <button class="iambtn"type="submit">Submit</button> 
+        {% comment %} <a class="iambtn" href="{% url 'trade_detail' %}">Submit</a> {% endcomment %}
     </form>
 
     <a class="anchorit" href="{% url 'tarde-all' %}">View All</a> <br><br>
