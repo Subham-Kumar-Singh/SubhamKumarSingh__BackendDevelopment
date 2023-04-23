@@ -1,0 +1,86 @@
+HTML { 
+    height : 100% ;
+}
+body { 
+    height:100%;
+}
+.back {
+    font-family: 'Courier New', Courier, monospace;
+    background-color : #F0F0F0; 
+    height : 100%;
+    text-align : center;
+}
+.homeclass {
+   font-size: 40px;
+}
+.background {
+  background-color : #F0F0F0;
+  text-align : center;
+  height : 100%;
+  display : flex ;
+  flex-direction : column ;
+  justify-content: center;
+  align-items : center; 
+}
+.main { 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: white;
+    justify-content: center;
+    width: 100%;
+    padding : 40px;
+   border-radius : 20px;
+}
+.select-form { 
+    display : flex;
+    justify-content: center;
+    
+}
+.select-form select {
+    margin-left:15px;
+    border-radius: 5px;;
+    width:100px;
+    padding : 1px;
+    outline : none ;
+    border : none;
+   background-color: #F0F0F0;
+}
+.select-form select > option {
+    background-color: #F0F0F0;
+}
+.iambtn {
+    width: 100%; 
+    margin: auto;
+    display: block;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.anchorit {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+.anchorit:hover{
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+.mainback {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+.homepageit {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 10px;
+}

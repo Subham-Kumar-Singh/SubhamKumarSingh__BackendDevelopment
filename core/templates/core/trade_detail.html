@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="mainback">
+      <h1>Trade Detail</h1>
+      <div class="main">{{trade_detail}}</div>
+      <br /><br />
+      <center>
+        <a href="{% url 'Home' %}" class="homepageit">Home Page</a>
+      </center>
+    </div>
+    {% comment %} {% for i in trade_detail %} {{i.label_tag}} {{i}} <br />
+    <br />
+    {% endfor %} {% endcomment %} {% comment %}
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="trade_id">Select Trade ID:</label>
+        <select class="form-control" name="trade_id" id="trade_id">
+          {% for trade in trades %}
+          <option value="{{ trade.trade_id }}">{{ trade.trade_id }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% endcomment %}
+  </body>
+</html>
