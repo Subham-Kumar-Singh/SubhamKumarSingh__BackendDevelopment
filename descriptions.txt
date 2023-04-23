@@ -1,0 +1,61 @@
+
+In this Porject I have Used the Django Rest FrameWork(DRF) to design a REST API.
+
+Steps Included to Make the REST API:
+    1. Make sure to have the requirement pre-filled that is mentioned in the requierments.txt 
+       in the virtual environments.
+
+    2. After installing the requirements.txt file we will be making a project using a command in the 
+       terminal (Django-admin startproject <projecctname>) after this we will be making a Appp inside 
+       the project by using the command "django-admin startapp <appname>". And do remember to include 
+       this app in settings.py installed App.
+    
+    3. After this we will be connecting our project with the App for that we are required to make the 
+       urls.py inside the app and include the link of the app's urls.py in the project urls.py .
+
+    4. Now After this we are required to make a Model(table/schema) for our sqllite database in the 
+       models.py file. After doing this we are reuired to makemigrations and then migrate the tables 
+       to the sqllite database.
+
+    5. Now we will are required to make a serializers.py file in the application so that we can do the 
+       serialization. Make the serializers class of the model's table in the serializers.py file for the 
+       same purpose.
+
+    6. Now in the views.py we will making the functions according to our needs and in the urls.py of the
+       application the links of the function that is made in the views.py file.
+
+
+Approach :-
+    1. For making the API the first Thing that I was needed was is the database to fetch the data 
+       for making the API that i satisfied using the sqlite database. I entered teh data into the 
+       database.
+
+    2. Then i came across that was to fetch the data from the database using the "trade_id" for that i 
+       used the Get and post of the django. From this i checked that if I was giving the in the form or 
+       the data coming from the database. If i was to give the data then i rendered to the Homepage else 
+       if it was the POST (i was the who was giving the data in the form of trade_id).If i was giving the 
+       data then I am taking that trade_id with me to the trade_detail.html and there i have rendered it 
+       using the Html and css to make it more decorative. I could have also given normal JSON object
+       (but it was not looking good :) ).
+
+    3. Now after that for searching in the the JSON data i have used the generic.ListAPIView class for the 
+       and inside that i have used the inbuilt search functionality that comes with the django_filters 
+       package. This is rendered using the Django browser API.
+
+    4. Now after that for Filtering in the the JSON data i have used the generic.ListAPIView class for the 
+       and inside that i have used the inbuilt Filtering functionality that comes with the rest_framework
+       package. This is rendered using the Django browser API.
+
+    5. Now after that for Ordering in the the JSON data i have used the generic.ListAPIView class for the 
+       and inside that i have used the inbuilt Ordering functionality that comes with the rest_framework 
+       package. This is rendered using the Django browser API.
+
+    6. OverAll Approach is that i have used the serialization for the Filtering,Ordering,Searching.
+
+    7. For the purpose of the pagination i have added a 
+       REST_FRAMEWORK=[
+        'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+        'PAGE_SIZE': 3,
+       ]
+
+       This is allowing the the page number pagination.
