@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -24,7 +24,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'django-insecure-6l2&(@er4*g=ol64@aa9_76_=-_2k=j&m_=c1!3m9jv-k$hfpz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -127,7 +127,7 @@ STATIC_URL = 'static/'
 
 # MEDIA_URL = 'media/'
 
-STATICFILES_DIRS = [STATIC_DIR]
+# STATICFILES_DIRS = [STATIC_DIR]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
