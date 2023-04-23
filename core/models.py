@@ -8,8 +8,9 @@ class TradeDetails(models.Model):
     quantity = models.IntegerField(help_text="The amount of units traded.")
 
 Option1=(
-    ('buy',"BUY"),
-    ('sell',"SELL"),
+    ('Bond',"BOND"),
+    ('Equity',"EQUITY"),
+    ('fx',"FIXED DEPOSIT"),
 )
 
 Option2=(
@@ -28,3 +29,6 @@ class Trade(models.Model):
     trade_details = models.ForeignKey(TradeDetails, on_delete=models.CASCADE, help_text="The details of the trade, i.e. price, quantity")
     trade_id = models.CharField(max_length=255, null=True, blank=True, help_text="The unique ID of the trade")
     trader = models.CharField(max_length=255, help_text="The name of the Trader")
+    
+    def __str__(self):
+        return self.trader +"  "+self.trade_id
