@@ -1,18 +1,25 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="mainback">
-      <h1>Trade Detail</h1>
-      <div class="main">{{trade_detail}}</div>
-      <br /><br />
+{% include 'core/base.html' %} {% block content %}
+<div class="prime">
+  <div class="mainback">
+    <h1>Trade Detail</h1>
+    <div class="insidemain">
+      <div class="main">
+        <div class="mainit">
+          <p><span>ID:</span> {{ data.trade_details.id }}</p>
+          <p>
+            <span>Buy/Sell Indicator:</span> {{data.trade_details.buy_sell_indicator }}
+          </p>
+          <p><span>Price: </span>{{ data.trade_details.price }}</p>
+          <p><span>Quantity:</span> {{ data.trade_details.quantity }}</p>
+          <p><span>Asset Class:</span> {{ data.asset_class }}</p>
+          <p><span>Counterparty: </span>{{ data.counterparty }}</p>
+          <p><span>Instrument ID: </span>{{ data.instrument_id }}</p>
+          <p><span>Instrument Name: </span>{{ data.instrument_name }}</p>
+          <p><span>Trade Date Time: </span>{{ data.trade_date_time }}</p>
+          <p><span>Trade ID: </span>{{ data.trade_id }}</p>
+          <p><span>Trader: </span>{{ data.trader }}</p>
+        </div>
+      </div>
       <center>
         <a href="{% url 'Home' %}" class="homepageit">Home Page</a>
       </center>
@@ -32,6 +39,6 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    {% endcomment %}
-  </body>
-</html>
+    {% endcomment %} {% endblock content %}
+  </div>
+</div>

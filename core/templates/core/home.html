@@ -3,7 +3,7 @@
 {% block content %}
 <div class="back">
 <div class  = "background">
-    {{trade_detail}}
+    {% comment %} {{trade_detail}} {% endcomment %}
     
     <form method="post">
         {% csrf_token %}
