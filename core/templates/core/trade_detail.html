@@ -1,6 +1,7 @@
 {% include 'core/base.html' %} {% block content %}
 
-<form action="" method="GET">
+<form action="" method="POST">
+  {% csrf_token %}
 <div class="prime">
   <div class="mainback">
     <h1>Trade Detail</h1>
