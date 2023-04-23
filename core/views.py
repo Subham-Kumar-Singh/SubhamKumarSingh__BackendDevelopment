@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from .serializers import *
 from .views import *
 
+from django.views.decorators.csrf import csrf_protect
+
 from rest_framework import generics, status, filters
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -11,7 +13,7 @@ from django_filters.rest_framework import DjangoFilterBackend, RangeFilter
 from django_filters import rest_framework
 # Create your views here.
 
-
+@csrf_protect
 def Home(request):
     if request.method == 'POST':
         trade_id = request.POST['trade_id']

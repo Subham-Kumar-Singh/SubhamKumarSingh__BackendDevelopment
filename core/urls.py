@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     path('', views.Home, name="Home"),
     # path('<str:trade_id>/',views.Home,name="Home"),
-    path("trade_detail/", views.Home, name="trade_detail"),
+    path("trade_detail/", views.TradeDetailView.as_view(), name="trade_detail"),
 
     # path('tradedetail/<str:trade_id>/',
     #      views.TradeDetailView.as_view(), name="trade-detail"),
